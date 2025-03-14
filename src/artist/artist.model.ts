@@ -8,8 +8,8 @@ export class Artist {
   @Field()
   artistEmail: string;
 
-  @Field({ nullable: true }) // Allow null
-  artistBiometricKey: string | null; // Update type to `string | null`
+  @Field({ nullable: true })
+  artistBiometricKey: string | null;
 
   @Field()
   artistCreatedAt: Date;

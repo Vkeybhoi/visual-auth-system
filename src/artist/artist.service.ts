@@ -7,7 +7,7 @@ import { Artist } from './artist.model';
 @Injectable()
 export class ArtistService {
   constructor(
-    private prisma: PrismaService, // Correctly injected PrismaService
+    private prisma: PrismaService,
     private jwtService: JwtService,
   ) {}
 
@@ -38,7 +38,7 @@ export class ArtistService {
 
   findByBiometricKey(biometricKey: string): Promise<Artist | null> {
     return this.prisma.artist
-      .findFirst({ where: { artistBiometricKey: biometricKey } }) // Use `findFirst`
+      .findFirst({ where: { artistBiometricKey: biometricKey } })
       .then((prismaArtist) =>
         prismaArtist ? this.mapPrismaArtistToDto(prismaArtist) : null,
       );
